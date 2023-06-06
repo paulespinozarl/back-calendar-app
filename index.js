@@ -23,7 +23,10 @@ app.use( express.json() );
 //Rutas
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/events', require('./routes/events'));
-//TODO: CRUD: Eventos
+
+app.get('*', (req, res)=> {
+    res.sendFile(__dirname + '/public/index.html');
+})
 
 
 //Escuchar peticiones
